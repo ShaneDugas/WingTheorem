@@ -1,0 +1,37 @@
+[
+  {
+    "path": ".gitignore",
+    "source_path": "C:\\Users\\SmD\\OneDrive\\Documents\\WingClassification\\.gitignore",
+    "source_ordinal": 51,
+    "sha256": "f27d99944945b12e55b35b8b03557645d5d3af7809b105f817a6cedd33aaac90",
+    "bytes": 222
+  },
+  {
+    "path": "README.md",
+    "source_path": "C:\\Users\\SmD\\OneDrive\\Documents\\WingClassification\\README.md",
+    "source_ordinal": 51,
+    "sha256": "46e517a47697dfa1310dcb0e311ad0a378c7c05aff8a533be7605d8baf4e6819",
+    "bytes": 2215
+  },
+  {
+    "path": "docs/wing-theory.md",
+    "source_path": "C:\\Users\\SmD\\OneDrive\\Documents\\WingClassification\\docs\\wing-theory.md",
+    "source_ordinal": 51,
+    "sha256": "1a15a61e74c1f5fe88caad2090e5ac9fcae80b58c4834a21489d2b9a4875eeb6",
+    "bytes": 6297
+  },
+  {
+    "path": "examples/bilbo-microsoft-date.json",
+    "source_path": "C:\\Users\\SmD\\OneDrive\\Documents\\WingClassification\\examples\\bilbo-microsoft-date.json",
+    "source_ordinal": 51,
+    "sha256": "705a364b378ffbf4a698d9be89eced0a3a2dc62d723ba768b9f1dffaa1ab6542",
+    "bytes": 4136
+  },
+  {
+    "path": "schema/wing-annotation.schema.json",
+    "source_path": "C:\\Users\\SmD\\OneDrive\\Documents\\WingClassification\\schema\\wing-annotation.schema.json",
+    "source_ordinal": 51,
+    "sha256": "4177388bf37fc8ddf66f72fb8b10a357f73b9d6d17bf61508d5dc9e50f9a7a68",
+    "bytes": 5270
+  }
+]

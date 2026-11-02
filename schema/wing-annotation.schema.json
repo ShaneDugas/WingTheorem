@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ShaneDugas/WingTheorem/schema/wing-annotation.schema.json",
+  "title": "Wing Meme Annotation",
+  "description": "Provisional evidence-first annotation format for Wing meme classification.",
+  "type": "object",
+  "required": [
+    "id",
+    "source",
+    "audience",
+    "layers",
+    "references",
+    "questions",
+    "layer_interactions",
+    "assessment"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "theory_version": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "required": ["asset"],
+      "properties": {
+        "asset": {
+          "type": "string"
+        },
+        "transcription": {
+          "type": "string"
+        },
+        "provenance": {
+          "type": ["string", "null"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "audience": {
+      "type": "object",
+      "required": ["description"],
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "age_range": {
+          "type": ["string", "null"]
+        },
+        "domain_familiarity": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cultural_context": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "layers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "description"],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": ["image", "text", "format", "context", "other"]
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "description",
+          "layer_ids",
+          "salience",
+          "recognition_probability"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "layer_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "salience": {
+            "$ref": "#/$defs/unitInterval"
+          },
+          "recognition_probability": {
+            "$ref": "#/$defs/unitInterval"
+          },
+          "confidence": {
+            "$ref": "#/$defs/unitInterval"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "latency",
+          "novelty",
+          "independence",
+          "resolution"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "latency": {
+            "enum": ["immediate", "latent"]
+          },
+          "novelty": {
+            "$ref": "#/$defs/unitInterval"
+          },
+          "independence": {
+            "$ref": "#/$defs/unitInterval"
+          },
+          "resolution": {
+            "$ref": "#/$defs/unitInterval"
+          },
+          "productive": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "layer_interactions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from", "to", "effect", "strength"],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "effect": {
+            "enum": [
+              "ground",
+              "resolve",
+              "amplify",
+              "contradict",
+              "gate",
+              "distract"
+            ]
+          },
+          "strength": {
+            "$ref": "#/$defs/unitInterval"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "required": ["provisional_label", "rationale"],
+      "properties": {
+        "provisional_label": {
+          "enum": ["wing", "borderline", "non-wing", "unrated"]
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "annotator_confidence": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "derived_scores": {
+          "type": ["object", "null"],
+          "description": "Populated by a separate scoring stage, not during evidence annotation.",
+          "additionalProperties": {
+            "type": "number"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "unitInterval": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "additionalProperties": false
+}

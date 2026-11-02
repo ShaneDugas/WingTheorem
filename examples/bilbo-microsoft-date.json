@@ -1,0 +1,135 @@
+{
+  "id": "bilbo-microsoft-date-integer",
+  "theory_version": "0.1-draft",
+  "source": {
+    "asset": "../assets/IMG_20220208_094144_555.jpg",
+    "transcription": "Microsoft. After all... why not? use an integer to store a date in the yyMMddHHmm format",
+    "provenance": null
+  },
+  "audience": {
+    "description": "English-speaking adult internet users with mixed software-development familiarity",
+    "age_range": null,
+    "domain_familiarity": [
+      "general internet meme conventions",
+      "mixed software development"
+    ],
+    "cultural_context": [
+      "modern Tolkien film adaptations",
+      "English-language technology humor"
+    ]
+  },
+  "layers": [
+    {
+      "id": "bilbo-image",
+      "kind": "image",
+      "description": "Bilbo Baggins considering whether to keep the One Ring"
+    },
+    {
+      "id": "source-caption",
+      "kind": "text",
+      "description": "After all... why not?"
+    },
+    {
+      "id": "microsoft-label",
+      "kind": "text",
+      "description": "Microsoft is assigned the role of Bilbo"
+    },
+    {
+      "id": "date-caption",
+      "kind": "text",
+      "description": "Use an integer to store a date in yyMMddHHmm format"
+    },
+    {
+      "id": "two-panel-format",
+      "kind": "format",
+      "description": "The repeated frame delays the added technical caption"
+    }
+  ],
+  "references": [
+    {
+      "id": "tolkien-bilbo",
+      "description": "Bilbo Baggins and the temptation to retain the One Ring",
+      "layer_ids": [
+        "bilbo-image",
+        "source-caption"
+      ],
+      "salience": 0.9,
+      "recognition_probability": 0.8,
+      "confidence": 0.65,
+      "notes": "Expected to be broadly recognizable, but the estimate must eventually be audience-tested."
+    },
+    {
+      "id": "date-storage",
+      "description": "Criticism of storing a compact date-time representation as an integer",
+      "layer_ids": [
+        "microsoft-label",
+        "date-caption"
+      ],
+      "salience": 0.9,
+      "recognition_probability": 0.45,
+      "confidence": 0.5,
+      "notes": "Recognition likely depends strongly on software and data-modeling experience."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Why would Microsoft store the date this way?",
+      "latency": "immediate",
+      "novelty": 0.8,
+      "independence": 0.7,
+      "resolution": 0.75,
+      "productive": true,
+      "notes": "The Bilbo frame supplies an immediate answer: arbitrary temptation or 'why not?' reasoning."
+    },
+    {
+      "id": "q2",
+      "text": "What is technically wrong with this representation?",
+      "latency": "immediate",
+      "novelty": 0.75,
+      "independence": 0.8,
+      "resolution": 0.2,
+      "productive": true,
+      "notes": "Available mainly to readers with relevant technical background."
+    },
+    {
+      "id": "q3",
+      "text": "Is the joke about Microsoft specifically or careless software design generally?",
+      "latency": "latent",
+      "novelty": 0.55,
+      "independence": 0.55,
+      "resolution": 0.4,
+      "productive": false,
+      "notes": "Adds interpretation but probably little payoff."
+    }
+  ],
+  "layer_interactions": [
+    {
+      "from": "bilbo-image",
+      "to": "date-caption",
+      "effect": "ground",
+      "strength": 0.8,
+      "notes": "The recognizable image quickly establishes the decision-making frame."
+    },
+    {
+      "from": "source-caption",
+      "to": "q1",
+      "effect": "resolve",
+      "strength": 0.75,
+      "notes": "The source question is also the implied explanation."
+    },
+    {
+      "from": "date-caption",
+      "to": "tolkien-bilbo",
+      "effect": "amplify",
+      "strength": 0.55,
+      "notes": "The technical caption recasts temptation as a questionable implementation choice."
+    }
+  ],
+  "assessment": {
+    "provisional_label": "borderline",
+    "rationale": "The meme generates multiple questions, but its familiar base image grounds and resolves the central question quickly. Raw question yield exceeds effective interpretive branching, producing a modest payoff.",
+    "annotator_confidence": 0.55,
+    "derived_scores": null
+  }
+}

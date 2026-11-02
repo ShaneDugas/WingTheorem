@@ -1,0 +1,16 @@
+# Local environments and generated artifacts
+.env
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Future generated analysis output
+output/
+reports/generated/
